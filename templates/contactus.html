@@ -1,0 +1,368 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Bootstrap CSS -->
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+
+    <title>OCR-Tigrinia --- Contact Us</title>
+
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+
+      <div class="row" >
+
+        <div class="col-lg-2 left" >
+
+       
+
+        </div>
+
+        <div class="col-lg-8">
+
+          <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" >
+
+            <a class="navbar-brand" href="#" style="margin-right: 20%;">Free Online Tigrinia OCR</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+              <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+
+              <div class="navbar-nav" >
+
+                <a class="nav-item nav-link active" href="/">Home </a>
+
+                <a class="nav-item nav-link" href="#">News</a>
+
+                <a class="nav-item nav-link" href="/contact">Contact <span class="sr-only">(current)</span></a>
+
+                <a class="nav-item nav-link" href="#">About</a>
+
+              </div>
+
+            </div>
+
+          </nav>
+
+        </div>
+
+        <div class="col-lg-2 right"></div>
+
+      </div>
+
+      <div class="row" style="min-height: 450px;" >
+
+        <div class="col-lg-2 left" style="margin-top: 10%;">
+
+          <ul class="list-group">
+
+            <li class="list-group-item active">Similar Links</li>
+
+            <li class="list-group-item "><a href="https://www.myfreeocr.com/tigrinya-ocr">TIGRINYA OCR</a></li>
+
+            <li class="list-group-item"><a href="http://www.i2ocr.com/free-online-tigrinya-ocr">Free Tigrinya OCR</a></li>
+
+            
+
+          </ul>
+
+
+
+        </div>
+
+        <div class=" col-lg-8" >
+
+  
+
+          <div class="mb-3 mt-3">
+
+        
+
+  
+
+            <div class="container contact-form" style="margin-top: 15%;">
+
+                <div class="contact-image">
+
+                    <h2 style="color: whitesmoke; margin-bottom: 15px;;">Contact Us</h2>
+
+                </div>
+
+                <form action="{{ request.url }}" method="post" onsubmit="return sendMail()">
+
+                  <div style="position: relative; margin: 40px 0 10px 0;">
+
+                    <h5 style="display: inline;">Drop Us a Message </h5>
+                     <a class="nav-item nav-link active" style="display: inline; position: absolute; right: 0; color: blue;" href="/">Home</a>
+                  </div>
+                  <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+
+                                <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Your Name *" value="" />
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <input type="text" name="txtEmail" id="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+
+                            </div>
+
+                         
+
+                           
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+
+                                <textarea name="txtMsg" id="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                          <div class="col-md-2">
+
+                                <div class="form-group">
+
+                                  <input type="submit" name="btnSubmit" id="btnSubmit" class="btnContact" value="Send Message" />
+
+                                </div>
+
+                          </div>
+
+                          <div class="col-md-10">
+
+                              <div  style="margin-left: 30px; color: rgb(122, 122, 131);">
+
+                                    {% if msg %}
+
+                                    <div>{{ msg }}</div>
+
+                                    {% endif %}
+
+                              </div>
+
+                          </div>
+
+                    </div>
+
+                   
+
+                </form>
+
+    </div>
+
+
+
+            
+
+        <div class="col-lg-2 right"></div>
+
+      </div>
+
+      </div>
+
+</div>
+
+
+
+      <div class="row sim-links">
+
+        <div class="col-lg-2 left"></div>
+
+        <div class="col-lg-8">
+
+
+
+          <ul class="list-group">
+
+            <li class="list-group-item active">Similar Links</li>
+
+            <li class="list-group-item "><a href="https://www.myfreeocr.com/tigrinya-ocr">TIGRINYA OCR</a></li>
+
+            <li class="list-group-item"><a href="http://www.i2ocr.com/free-online-tigrinya-ocr">Free Tigrinya OCR</a></li>
+
+            
+
+          </ul>
+
+        </div>
+
+        <div class="col-lg-2 right"></div>
+
+      </div>
+
+
+
+
+
+      <div class="row">
+
+        <div class="col-lg-2 left"></div>
+
+        <div class="col-lg-8">
+
+          <div class="row footer">
+
+            <div class="col-lg-4 footer-left">
+
+                <ul>
+
+                    <li><a class="" href="/">Home <span class="sr-only">(current)</span></a></li>
+
+                    <li><a class="" href="#">News</a></li>
+
+                    <li><a class="" href="/contact">Contact</a></li>
+
+                    <li><a class="" href="#">About</a></li>
+
+                  </ul>
+
+          
+
+            </div>
+
+            <div class="col-lg-4 footer-center">
+
+              <h3>Optical Character Recognition for Tigrinia Language</h3>
+
+              <div>
+
+               <span>Email : tta2yta@gmail.com</span>
+
+                <span>Tel : +79777562351</span>
+
+              </div>
+
+          
+
+            </div>
+
+            <div class="col-lg-4 footer-right">
+
+              <a href="https://instagram.com"><img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;" src="{{ url_for('static',filename='images/ig.png') }}"></a> 
+
+              <a  href="https://facebook.com"> <img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;"  src="{{ url_for('static',filename='images/fb.png') }}"></a>
+
+              <a href="https://gmail.com"><img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;"   src="{{ url_for('static',filename='images/twitch.png') }}"></a> 
+
+              <a href="https://twitter.com"><img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;"   src="{{ url_for('static',filename='images/tw.png') }}"></a> 
+
+              
+
+            </div>
+
+            <div class="footer-bottom"><hr></div>
+
+            
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 right"></div>
+
+       
+
+    </div>
+
+  
+
+<script>
+
+ sendMail=(e)=>{
+
+     
+
+     var name=document.getElementById('txtName').value;
+
+     var email=document.getElementById('txtEmail').value;
+
+     var msg=document.getElementById('txtMsg').value;
+
+     var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+
+     if(name!='' && re.test(email) && msg!=''){
+
+    return true;
+
+     }
+
+     else
+
+     {
+
+    alert("Please Enter Correct Vaules in the Field")
+
+    return false;
+
+     }
+
+     
+
+ }
+
+
+
+
+
+</script>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+
+    <script src="{{ url_for('static',filename='js/jquery-3.5.1.slim.min.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Upload Image</title>
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+ 
+  </head>
+ <body>
+   <div class="container">
+    <div class="se-pre-con"></div>
+  <div class="col-2 col-s-2 left"></div>
+  <div class="col-8 col-s-8 header">
+  <ul class="header-nav">
+    <li><a class="active" href="#">Home</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Contact</a></li>
+    <li class="title-logo" style="margin-left: 20%; border-right: none;"><a href="#">Free Online Tigrinia OCR</a></li>
+    <li style="float:right"><a href="#">About</a></li>
+  </ul>
+  </div>
+  <div class="col-2 col-s-2 right"></div>
+  
+<div class="main">
+<div class="col-2 col-s-2 left"></div>
+<div class="col-8 col-s-8 main-center">
+
+  <h3>Please Upload Image File</h3>
+ 
+  <form method="post" enctype="multipart/form-data" onsubmit="Filevalidation()">
+    <p><input type=file id="file"  name="file" onchange="Filevalidation()">
+       <input type=submit value=Upload></p>
+  </form>
+
+  {% if msg1 %}
+  <div>{{ msg1 }}</div>
+  {% endif %}
+
+  {% if msg !='' %}
+  <div>Please Download Pdf from below link</div>
+  Download &nbsp;&nbsp; <a href="/pdf1">{{name}}</a>
+
+  <div>Your Image:</div>
+  {% if img_src %}
+    <img src="{{ img_src }}" class="tig-img">
+  {% endif %}
+ 
+  {% if extracted_text %}
+    <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
+ 
+  {% else %}
+    The extracted text will be displayed here
+    <h3>Loading</h3>
+    <img src="{{ url_for('static',filename='download.png') }}">
+  {% endif %}
+
+
+  {% endif %}
+
+
+</div>
+<div class="col-2 col-s-2">
+  
+<div class="sim-links">
+  <h3>Similar Links</h3>
+<ul>
+  <li><a href="https://www.myfreeocr.com/tigrinya-ocr">TIGRINYA OCR</a></li>
+  <li> <a href="http://www.i2ocr.com/free-online-tigrinya-ocr">Free Tigrinya OCR</a></li>
+</ul>
+</div>
+
+
+</div>
+
+</div>
+<div class="footer">
+  <div class="col-4 col-s-4 footer-left">
+    <ul>
+      <li>Home</li>
+      <li>News</li>
+      <li>About Us</li>
+      <li>Contact</li>
+    </ul>
+
+  </div>
+  <div class="col-4 col-s-4 footer-center">
+    <h3>Optical Character Regognition for Tigrinia Language</h3>
+    <div>
+      <span>Tedros Tesfay Andemicahel</span>
+      <span>Email : tta2yta@gmail.com</span>
+      <span>Tel : +79777562351</span>
+    </div>
+
+  </div>
+  <div class="col-4 col-s-4 footer-right">
+    <a href="https://instagram.com"><img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;" src="{{ url_for('static',filename='images/ig.png') }}"></a> 
+    <a  href="https://facebook.com"> <img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;"  src="{{ url_for('static',filename='images/fb.png') }}"></a>
+    <a href="https://gmail.com"><img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;"   src="{{ url_for('static',filename='images/twitch.png') }}"></a> 
+    <a href="https://twitter.com"><img id="img-fac" width="10%" style="margin-top: 20px; margin-right: 10px;"   src="{{ url_for('static',filename='images/tw.png') }}"></a> 
+    
+  </div>
+  <div class="footer-bottom"><hr></div>
+  
+</div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script> 
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+  Filevalidation = () => { 
+      var fi = document.getElementById('file'); 
+      // Check if any file is selected. 
+      if (fi.files.length > 0) { 
+          for (const i = 0; i <= fi.files.length - 1; i++) { 
+
+              var fsize = fi.files.item(i).size; 
+              var file = Math.round((fsize / 1024)); 
+              // The size of the file. 
+              if (file >= 4096) { 
+                  alert( 
+                    "File too Big, please select a file less than 4mb"); 
+                    fi.value="";
+              } 
+          } 
+      } 
+  } 
+</script>
+
+ </body>
+</html>

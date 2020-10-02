@@ -1,0 +1,39 @@
+FROM ubuntu:latest
+
+RUN apt-get update && \
+  apt-get install -y software-properties-common && \
+ add-apt-repository ppa:deadsnakes/ppa
+
+RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv
+RUN apt-get install -y git
+
+# update pip
+RUN python3.6 -m pip install pip --upgrade
+RUN python3.6 -m pip install wheel
+
+#Use working directory /app
+WORKDIR /app
+
+#Copy all the content of current directory to /app
+ADD . /app
+
+#install pytesseract
+RUN pip install pytesseract
+
+#copying training data
+COPY amh.traineddata /usr/share/tesseract-ocr/4.00/tessdata
+
+RUN /bin/bash -c "source apt/venv/bin/activate"
+
+#Installing required packages
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+
+#Open port 5000
+EXPOSE 5000
+
+#Set environment variable
+ENV NAME OpentoAll
+
+#Run python program
+CMD ["python3","app.py"]

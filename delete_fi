@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# My first script
+
+
+find /home/ted/Desktop/ubu-doc/static/uploads -type f -mmin +0 -exec rm {} \;

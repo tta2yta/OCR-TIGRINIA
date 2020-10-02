@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# My first script
+
+find . -type f -mmin +1 -exec rm {} \;

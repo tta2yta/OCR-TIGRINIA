@@ -1,0 +1,30 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive 
+
+RUN apt-get update -y
+RUN apt-get install -y python3-pip python3-minimal libsm6 libxext6
+RUN apt update && apt install  libsm6 libxext6
+RUN apt-get install 'ffmpeg'\
+    'libsm6'\ 
+    'libxext6'  -y
+
+RUN apt install -y libtesseract-dev libleptonica-dev liblept5
+RUN apt-get update && apt-get install -y tesseract-ocr
+RUN apt-get install -y tesseract-ocr-amh
+
+COPY . /app
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+python3-pip
+
+
+RUN pip3 install pillow
+RUN pip3 install pytesseract
+RUN pip3 install opencv-python
+RUN pip3 install -r requirements.txt
+
+ENTRYPOINT ["python3"]
+CMD ["app.py"]
