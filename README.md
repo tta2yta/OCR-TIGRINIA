@@ -15,7 +15,7 @@ https://ted-ocr-1.azurewebsites.net/
 ![screenshot](images/desk.jpg)
 
 ## Tablet, Mobile
-![screenshot](images/mobile.jpg)
+![screenshot](images/mobile.jpeg)
 
 ## Built With
 
